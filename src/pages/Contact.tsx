@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Sticker } from "@/components/Sticker";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "emailjs-com";
 import { useRef } from "react";
@@ -47,12 +48,15 @@ export default function Contact() {
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
-      <section className="container py-16">
+      <section className="relative container py-16">
         <Helmet>
           <title>Contact • Cloud Community Days</title>
           <meta name="description" content="Contact the Cloud Community Days team for partnerships, volunteering, and general queries." />
           <link rel="canonical" href="/contact" />
         </Helmet>
+        <Sticker shape="cloud" colour="green" className="absolute left-[8%] top-[22%] h-20 hidden lg:block" rotate={-6} />
+        <Sticker shape="star" colour="red" className="absolute left-[14%] top-[62%] h-14 hidden lg:block" rotate={12} delay={3} />
+        <Sticker shape="blocks" colour="yellow" className="absolute right-[7%] top-[35%] h-16 hidden lg:block" delay={1} />
         <div className="max-w-xl mx-auto bg-card shadow-2xl p-8 items-center justify-center bg-white border-2 border-black border-t-4 border-r-4">
           <h1 className="font-display text-4xl mb-4 text-center">Contact Us</h1>
           <p className="text-muted-foreground mb-8 text-center">

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Sticker } from "@/components/Sticker";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -54,6 +55,13 @@ export default function Agenda() {
               <p className="text-muted-foreground text-xs md:text-sm">
                 Timings are tentative; sessions and speakers will be announced soon.
               </p>
+              <div className="hidden md:flex items-end justify-center gap-6 mt-10">
+                <Sticker shape="cloud" colour="blue" className="h-20" rotate={-6} />
+                <Sticker shape="star" colour="red" className="h-16" rotate={8} delay={2} />
+              </div>
+              <div className="hidden md:flex justify-center mt-6">
+                <Sticker shape="blocks" colour="yellow" className="h-14" delay={4} />
+              </div>
             </div>
           </aside>
           {/* Schedule Section */}

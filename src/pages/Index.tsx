@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Sticker } from "@/components/Sticker";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Cloud, Cpu, GitBranch, Rocket } from "lucide-react";
@@ -36,18 +37,23 @@ const Index = () => {
   ];
 
   return (
-    <div className="bg-grid-subtle">
+    <div className="bg-grid-subtle relative overflow-x-clip">
+      {/* Side margins are only wide enough from about 1680px; below that these stay hidden. */}
+      <Sticker shape="blocks" colour="yellow" className="absolute left-[1.5%] top-[1100px] h-14 hidden min-[1680px]:block" rotate={-6} delay={1} />
+      <Sticker shape="cloud" colour="green" className="absolute right-[1.5%] top-[1750px] h-16 hidden min-[1680px]:block" delay={3} />
+      <Sticker shape="star" colour="red" className="absolute left-[2%] top-[2500px] h-16 hidden min-[1680px]:block" rotate={10} delay={5} />
       <Helmet>
         <title>Cloud Community Days 2026 | Cloud • DevOps • AI/ML</title>
         <meta name="description" content="Cloud Community Days 2026 in Chandigarh on 23 October: talks on Cloud, DevOps, and AI/ML, plus hands-on sessions and networking." />
         <link rel="canonical" href="/" />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="container pt-8 pb-10 md:pt-16 md:pb-28">
+      {/* First screen: hero and countdown together, centred under the 4rem header. */}
+      <div className="flex min-h-[calc(100svh-4rem)] flex-col justify-center gap-10 py-10 md:gap-8 2xl:gap-14">
+      <section className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
-          <div className="space-y-6 animate-fade-in">
-            <img src="/images/ccd-logo.png" alt="Cloud Community Days 2026 Logo" className="w-80 md:w-full max-w-xs md:max-w-md" style={{ height: "auto" }} />
+          <div className="space-y-5 2xl:space-y-6 animate-fade-in">
+            <img src="/images/ccd-logo.png" alt="Cloud Community Days 2026 Logo" className="w-80 md:w-full max-w-xs md:max-w-sm 2xl:max-w-md" style={{ height: "auto" }} />
             <p className="text-base md:text-lg text-muted-foreground max-w-prose mx-auto">
               The biggest, most exciting cloud community event of the year - focused on Cloud, DevOps, AI/ML, and developer networking.
             </p>
@@ -76,7 +82,7 @@ const Index = () => {
               <div className="flex items-center gap-2"><Rocket /><span>Launchpad</span></div>
             </div>
           </div>
-          <div className="relative h-48 sm:h-72 md:h-[420px] overflow-hidden mt-6 md:mt-0">
+          <div className="relative aspect-[1706/689] md:aspect-auto md:h-[340px] 2xl:h-[420px] overflow-hidden mt-2 md:mt-0">
             <img
               src="/images/hero-section.png"
               alt="Audience at Cloud Community Days in Chandigarh"
@@ -88,9 +94,11 @@ const Index = () => {
       </section>
 
       {/* Countdown */}
-      <section className="w-full border-black px-4 sm:px-8 py-8 mb-8 md:mb-12 flex flex-col items-center justify-center animate-fade-in">
-        <h2 className="font-display text-xl md:text-5xl mb-4 text-center">Countdown to Cloud Community Days</h2>
-        <div className="flex flex-wrap justify-center gap-6 md:gap-20 text-3xl md:text-7xl font-bold text-black">
+      <section className="relative w-full px-4 sm:px-8 flex flex-col items-center justify-center animate-fade-in">
+        <Sticker shape="cloud" colour="blue" className="absolute left-[7%] top-1/2 -mt-8 h-16 hidden lg:block 2xl:left-[12%] 2xl:h-20" rotate={-4} />
+        <Sticker shape="star" colour="yellow" className="absolute right-[8%] top-1/2 -mt-8 h-16 hidden lg:block 2xl:right-[13%] 2xl:h-20" rotate={8} delay={2} />
+        <h2 className="font-display text-lg sm:text-2xl md:text-3xl 2xl:text-5xl mb-4 text-center">Countdown to Cloud Community Days</h2>
+        <div className="flex flex-wrap justify-center gap-6 md:gap-16 2xl:gap-20 text-3xl md:text-5xl 2xl:text-7xl font-bold text-black tabular-nums">
           <div className="flex flex-col items-center">
             <span>{timeLeft.days}</span>
             <span className="text-sm font-normal">Days</span>
@@ -109,9 +117,10 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* Features */}
-      <section className="container pb-20">
+      <section className="container pt-4 pb-20">
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {[
             { title: 'Keynotes & Breakouts', desc: 'Hear from engineers and community leaders shaping cloud-native and AI.' },
@@ -128,7 +137,8 @@ const Index = () => {
 
       {/* About */}
       <section id="about" className="container pb-20 animate-fade-in">
-        <header className="mb-6">
+        <header className="relative mb-6">
+          <Sticker shape="blocks" colour="green" className="absolute right-2 bottom-0 h-16 hidden lg:block" rotate={4} delay={1} />
           <h2 className="font-display text-xl md:text-3xl">About Cloud Community Days</h2>
           <p className="text-muted-foreground mt-2 max-w-prose text-sm md:text-base">
             Cloud Community Days is a community-first conference celebrating cloud computing, DevOps, and AI/ML — built by developers, for developers.
@@ -176,7 +186,7 @@ const Index = () => {
               className="flex items-start gap-4 p-4 border-2 border-black border-t-4 border-r-4 bg-white shadow-lg bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
             >
               <div className="flex flex-col items-center justify-center min-w-[70px]">
-                <div className="bg-[hsl(var(--brand-blue))] text-white font-bold px-3 py-1 text-xs md:text-sm shadow">
+                <div className="bg-[hsl(var(--brand-blue))] text-white font-bold px-3 py-1 text-xs md:text-sm shadow whitespace-nowrap">
                   {item.time}
                 </div>
               </div>
@@ -195,11 +205,12 @@ const Index = () => {
 
       {/* Featured Topics */}
       <section id="topics" className="container pb-20 animate-fade-in">
-        <header className="mb-8">
+        <header className="relative mb-8">
+          <Sticker shape="cloud" colour="red" className="absolute right-2 bottom-0 h-14 hidden md:block" rotate={6} delay={4} />
           <h2 className="font-display text-xl md:text-3xl">Featured Topics</h2>
           <p className="text-muted-foreground mt-2 text-sm md:text-base">Explore the latest in cloud, AI, web, and data at Cloud Community Days.</p>
         </header>
-        <div className="grid gap-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-items-center">
+        <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-5">
           {[
             { name: "Google Cloud", logo: "/logos/gcp.png" },
             { name: "Gemini API", logo: "/logos/gemini.png" },
@@ -212,17 +223,16 @@ const Index = () => {
             { name: "Kuberenetes", logo: "/logos/kubernetes.png" },
             { name: "AI/ML", logo: "/logos/ai-ml.png" },
           ].map((topic, idx) => (
-            <div key={idx} className="flex flex-col items-center">
-              <div className="bg-white border-2 border-black border-t-4 border-r-4 shadow-soft p-4 flex flex-col items-center justify-center" style={{ width: '140px', height: '140px' }}>
-                <img src={topic.logo} alt={topic.name} className="max-h-12 max-w-full object-contain mb-2" />
-                <span className="text-xs md:text-sm text-center font-medium break-words leading-tight">{topic.name}</span>
-              </div>
+            <div key={idx} className="bg-white border-2 border-black border-t-4 border-r-4 shadow-soft p-4 flex flex-col items-center justify-center gap-2 aspect-[3/2] sm:aspect-[4/3]">
+              <img src={topic.logo} alt="" className="h-9 md:h-14 max-w-full object-contain" />
+              <span className="text-xs md:text-sm text-center font-medium break-words leading-tight">{topic.name}</span>
             </div>
           ))}
         </div>
       </section>
       <section id="location" className="container pb-20 animate-fade-in">
-        <header className="mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+        <header className="relative mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+          <Sticker shape="star" colour="blue" className="absolute right-2 bottom-0 h-14 hidden md:block" rotate={-8} delay={2} />
           <div>
             <h2 className="font-display text-xl md:text-3xl">Location — Chandigarh University</h2>
             <p className="text-muted-foreground mt-2 text-sm md:text-base">Mamupur, Punjab • Interactive map</p>

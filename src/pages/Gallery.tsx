@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Sticker } from "@/components/Sticker";
 
 export default function Gallery() {
   return (
@@ -15,12 +16,13 @@ export default function Gallery() {
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
-      <section className="container py-16">
+      <section className="relative container py-16">
         <Helmet>
           <title>Gallery • Cloud Community Days</title>
           <meta name="description" content="Photos and videos from past Cloud Community Days events." />
           <link rel="canonical" href="/gallery" />
         </Helmet>
+        <Sticker shape="blocks" colour="red" className="absolute right-8 top-10 h-14 hidden md:block" rotate={-4} />
         <h1 className="font-display text-4xl mb-8">Gallery</h1>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[

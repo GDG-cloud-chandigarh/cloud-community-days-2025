@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Sticker } from "@/components/Sticker";
 import { Card } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 
@@ -67,7 +68,7 @@ export default function Team() {
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
-      <section className="container py-16">
+      <section className="relative container py-16">
         <Helmet>
           <title>Team • Cloud Community Days</title>
           <meta
@@ -76,6 +77,8 @@ export default function Team() {
           />
           <link rel="canonical" href="/team" />
         </Helmet>
+        <Sticker shape="blocks" colour="blue" className="absolute left-[12%] top-12 h-14 hidden md:block" rotate={-6} />
+        <Sticker shape="cloud" colour="green" className="absolute right-[12%] top-10 h-16 hidden md:block" delay={2} />
         <h1 className="font-display text-4xl mb-8 text-center">Our Team</h1>
         <div className="flex justify-center mb-12">
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">

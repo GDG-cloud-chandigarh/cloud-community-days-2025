@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Sticker } from "@/components/Sticker";
 import { UserRound } from "lucide-react";
 
 type Speaker = {
@@ -33,7 +34,7 @@ export default function Speakers() {
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
-      <section className="container py-16">
+      <section className="relative container py-16">
         <Helmet>
           <title>Speakers • Cloud Community Days</title>
           <meta
@@ -42,13 +43,15 @@ export default function Speakers() {
           />
           <link rel="canonical" href="/speakers" />
         </Helmet>
+        <Sticker shape="star" colour="green" className="absolute right-8 top-12 h-16 hidden md:block" rotate={10} />
+        <Sticker shape="cloud" colour="yellow" className="absolute right-32 top-14 h-12 hidden lg:block" rotate={-6} delay={3} />
         <h1 className="font-display text-4xl mb-2">Speakers</h1>
         <p className="text-muted-foreground mb-8">Speakers for 23rd October 2026 will be announced soon.</p>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {speakers.map((sp, i) => (
             <div
               key={i}
-              className="bg-white border-2 border-black border-t-4 border-r-4 shadow-xl flex flex-col p-6 items-center text-center aspect-square"
+              className="w-full max-w-xs bg-white border-2 border-black border-t-4 border-r-4 shadow-xl flex flex-col p-6 items-center justify-center text-center aspect-square"
             >
               {sp.photo ? (
                 <img

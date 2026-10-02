@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import { Sticker } from "@/components/Sticker";
+import { Seo } from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -23,17 +23,10 @@ const schedule: { time: string; title: string; speaker?: string }[] = [
 export default function Agenda() {
   return (
     <>
-      <Helmet>
-        <title>Agenda • Cloud Community Days</title>
-        <meta
-          name="description"
-          content="Explore the full Cloud Community Days agenda with talks, labs, and networking."
-        />
-        <link rel="canonical" href="/agenda" />
-      </Helmet>
+      <Seo path="/agenda" title="Agenda | Cloud Community Days 2026 Chandigarh" description="The running order for Cloud Community Days 2026 on 23 October in Chandigarh: keynote, talks on Google Cloud, AI/ML and DevOps, a hands-on session and a panel." />
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/page-banner.png"
+        src="/images/page-banner.webp"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain rounded-xl shadow hidden sm:block"
       />
@@ -48,7 +41,7 @@ export default function Agenda() {
           {/* Sticky Agenda Section */}
           <aside className="md:col-span-1 md:sticky md:top-24 h-fit">
             <div className="p-6 flex flex-col text-center">
-              <h2 className="font-display text-xl md:text-4xl mb-4">Agenda</h2>
+              <h1 className="font-display text-xl md:text-4xl mb-4">Agenda</h1>
               <p className="text-muted-foreground text-sm md:text-base mb-6">
                 Full day of keynotes, breakouts, and hands-on labs on 23rd October 2026.
               </p>
@@ -71,7 +64,7 @@ export default function Agenda() {
                 <li key={idx} className="relative">
                   <div className="flex items-start gap-4">
                     <div className="flex flex-col items-center justify-center min-w-[80px]">
-                      <div className="bg-[hsl(var(--brand-blue))] text-white font-bold px-3 py-2 text-xs md:text-sm shadow">
+                      <div className="bg-[hsl(217_90%_45%)] text-white font-bold px-3 py-2 text-xs md:text-sm shadow">
                         {item.time}
                       </div>
                     </div>

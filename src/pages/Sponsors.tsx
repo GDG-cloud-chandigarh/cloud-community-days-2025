@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import { Sticker } from "@/components/Sticker";
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 
 // Same community partners as the DevFest Chandigarh 2026 site. `dark` puts a
@@ -50,7 +50,7 @@ export default function Sponsors() {
     <>
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/page-banner.png"
+        src="/images/page-banner.webp"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
@@ -61,11 +61,7 @@ export default function Sponsors() {
         className="w-full object-contain block sm:hidden"
       />
       <section className="relative container py-16">
-        <Helmet>
-          <title>Sponsors • Cloud Community Days</title>
-          <meta name="description" content="Thanks to our sponsors and partners who make Cloud Community Days possible." />
-          <link rel="canonical" href="/sponsors" />
-        </Helmet>
+        <Seo path="/sponsors" title="Partners & Sponsors | Cloud Community Days 2026" description="Google for Developers, Chandigarh University and the 25 community partners behind Cloud Community Days 2026 in Chandigarh, and how to sponsor the event." />
         <Sticker shape="star" colour="yellow" className="absolute left-[10%] top-10 h-16 hidden lg:block" rotate={-10} />
         <Sticker shape="cloud" colour="blue" className="absolute right-[10%] top-10 h-16 hidden lg:block" delay={3} />
         <div className="flex flex-col items-center justify-center mb-8 gap-4">

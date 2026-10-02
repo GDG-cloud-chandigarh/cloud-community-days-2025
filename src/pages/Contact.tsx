@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import { Sticker } from "@/components/Sticker";
+import { Seo } from "@/components/Seo";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "emailjs-com";
 import { useRef } from "react";
@@ -38,7 +38,7 @@ export default function Contact() {
     <>
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/page-banner.png"
+        src="/images/page-banner.webp"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
@@ -49,11 +49,7 @@ export default function Contact() {
         className="w-full object-contain block sm:hidden"
       />
       <section className="relative container py-16">
-        <Helmet>
-          <title>Contact • Cloud Community Days</title>
-          <meta name="description" content="Contact the Cloud Community Days team for partnerships, volunteering, and general queries." />
-          <link rel="canonical" href="/contact" />
-        </Helmet>
+        <Seo path="/contact" title="Contact | Cloud Community Days 2026 Chandigarh" description="Get in touch with the Cloud Community Days 2026 team about tickets, speaking, sponsorship or volunteering." />
         <Sticker shape="cloud" colour="green" className="absolute left-[8%] top-[22%] h-20 hidden lg:block" rotate={-6} />
         <Sticker shape="star" colour="red" className="absolute left-[14%] top-[62%] h-14 hidden lg:block" rotate={12} delay={3} />
         <Sticker shape="blocks" colour="yellow" className="absolute right-[7%] top-[35%] h-16 hidden lg:block" delay={1} />

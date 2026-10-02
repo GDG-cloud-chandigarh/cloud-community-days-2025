@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Seo } from "@/components/Seo";
 import { Sticker } from "@/components/Sticker";
-import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Cloud, Cpu, GitBranch, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -42,18 +42,17 @@ const Index = () => {
       <Sticker shape="blocks" colour="yellow" className="absolute left-[1.5%] top-[1100px] h-14 hidden min-[1680px]:block" rotate={-6} delay={1} />
       <Sticker shape="cloud" colour="green" className="absolute right-[1.5%] top-[1750px] h-16 hidden min-[1680px]:block" delay={3} />
       <Sticker shape="star" colour="red" className="absolute left-[2%] top-[2500px] h-16 hidden min-[1680px]:block" rotate={10} delay={5} />
-      <Helmet>
-        <title>Cloud Community Days 2026 | Cloud • DevOps • AI/ML</title>
-        <meta name="description" content="Cloud Community Days 2026 in Chandigarh on 23 October: talks on Cloud, DevOps, and AI/ML, plus hands-on sessions and networking." />
-        <link rel="canonical" href="/" />
-      </Helmet>
+      <Seo path="/" title="Cloud Community Days 2026 Chandigarh | 23 October" description="Cloud Community Days 2026 by GDG Cloud Chandigarh on 23 October at Chandigarh University: talks on Google Cloud, AI/ML and DevOps, hands-on labs and networking." />
 
       {/* First screen: hero and countdown together, centred under the 4rem header. */}
       <div className="flex min-h-[calc(100svh-4rem)] flex-col justify-center gap-10 py-10 md:gap-8 2xl:gap-14">
       <section className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
           <div className="space-y-5 2xl:space-y-6 animate-fade-in">
-            <img src="/images/ccd-2026-logo.png" alt="Cloud Community Days 2026 Logo" className="w-80 md:w-full max-w-xs md:max-w-sm 2xl:max-w-md" style={{ height: "auto" }} />
+            <h1>
+              {/* width/height reserve the space, so the page does not jump when it loads. */}
+              <img src="/images/ccd-2026-logo.png" alt="Cloud Community Days 2026" width={884} height={501} fetchPriority="high" className="w-80 md:w-full max-w-xs md:max-w-sm 2xl:max-w-md" style={{ height: "auto" }} />
+            </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-prose mx-auto">
               The biggest, most exciting cloud community event of the year - focused on Cloud, DevOps, AI/ML, and developer networking.
             </p>
@@ -84,7 +83,7 @@ const Index = () => {
           </div>
           <div className="relative aspect-[1706/689] md:aspect-auto md:h-[340px] 2xl:h-[420px] overflow-hidden mt-2 md:mt-0">
             <img
-              src="/images/hero-community.png"
+              src="/images/hero-community.webp"
               alt="Audience at Cloud Community Days in Chandigarh"
               className="absolute inset-0 w-full h-full object-contain animate-enter"
               decoding="async"
@@ -186,7 +185,7 @@ const Index = () => {
               className="flex items-start gap-4 p-4 border-2 border-black border-t-4 border-r-4 bg-white shadow-lg bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
             >
               <div className="flex flex-col items-center justify-center min-w-[70px]">
-                <div className="bg-[hsl(var(--brand-blue))] text-white font-bold px-3 py-1 text-xs md:text-sm shadow whitespace-nowrap">
+                <div className="bg-[hsl(217_90%_45%)] text-white font-bold px-3 py-1 text-xs md:text-sm shadow whitespace-nowrap">
                   {item.time}
                 </div>
               </div>
@@ -241,6 +240,7 @@ const Index = () => {
         <article className="rounded-xl border bg-card overflow-hidden shadow-soft">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3428.2062520807226!2d76.57060829678954!3d30.768790200000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ffb140bd63e07%3A0x68591e334d17a988!2sChandigarh%20University!5e0!3m2!1sen!2sin!4v1754969616756!5m2!1sen!2sin"
+            title="Map of Chandigarh University, the venue"
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
@@ -270,7 +270,7 @@ const Index = () => {
             <h2 className="font-display text-xl md:text-3xl">Gallery</h2>
             <p className="text-muted-foreground mt-2 text-sm md:text-base">Moments from past community events.</p>
           </div>
-          <Link to="/gallery" className="w-full md:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10 mt-4 md:mt-0" >See more</Link>
+          <Link to="/gallery" className="w-full md:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10 mt-4 md:mt-0" >See more photos</Link>
         </header>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
@@ -321,7 +321,7 @@ const Index = () => {
           {/* Right: Image */}
           <div className="hidden lg:flex justify-center mt-8 md:mt-0">
             <img
-              src="/images/contact-community.png"
+              src="/images/contact-community.webp"
               alt="Cloud Community Days Chandigarh"
               className="rounded-xl w-full max-w-xs md:max-w-md object-cover"
               loading="lazy"

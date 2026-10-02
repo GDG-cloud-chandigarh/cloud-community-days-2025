@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import { Sticker } from "@/components/Sticker";
+import { Seo } from "@/components/Seo";
 import { UserRound } from "lucide-react";
 
 type Speaker = {
@@ -24,7 +24,7 @@ export default function Speakers() {
     <>
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/page-banner.png"
+        src="/images/page-banner.webp"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
@@ -35,14 +35,7 @@ export default function Speakers() {
         className="w-full object-contain block sm:hidden"
       />
       <section className="relative container py-16">
-        <Helmet>
-          <title>Speakers • Cloud Community Days</title>
-          <meta
-            name="description"
-            content="Meet the Cloud Community Days speakers and community leaders."
-          />
-          <link rel="canonical" href="/speakers" />
-        </Helmet>
+        <Seo path="/speakers" title="Speakers | Cloud Community Days 2026 Chandigarh" description="Speakers for Cloud Community Days 2026 on 23 October in Chandigarh, covering Google Cloud, AI/ML, DevOps, Gemini, Firebase and Kubernetes. Announced soon." />
         <Sticker shape="star" colour="green" className="absolute right-8 top-12 h-16 hidden md:block" rotate={10} />
         <Sticker shape="cloud" colour="yellow" className="absolute right-32 top-14 h-12 hidden lg:block" rotate={-6} delay={3} />
         <h1 className="font-display text-4xl mb-2">Speakers</h1>

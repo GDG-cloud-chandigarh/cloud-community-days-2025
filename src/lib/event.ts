@@ -1,5 +1,11 @@
 // Shared event details, so a date or link change happens in one place.
 
+/**
+ * Production origin, used for canonical links and share tags. Always the live
+ * domain, so a Vercel preview never competes with the real site in search.
+ */
+export const SITE_URL = "https://ccd.gdgcloudchandigarh.com";
+
 /** AllEvents page selling Cloud Community Days and DevFest Chandigarh tickets. */
 export const REGISTER_URL =
   "https://allevents.in/chandigarh/cloud-community-day-devfest-chandigarh-tickets/80001690026969";

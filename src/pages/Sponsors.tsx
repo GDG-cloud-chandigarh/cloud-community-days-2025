@@ -7,13 +7,13 @@ export default function Sponsors() {
       {/* Desktop/Laptop header image */}
       <img
         src="/images/header.png"
-        alt="Cloud Community Days 2025 Logo"
+        alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
       {/* Mobile header image */}
       <img
         src="/images/mobile_header.png"
-        alt="Cloud Community Days 2025 Mobile Logo"
+        alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
       <section className="container py-16">

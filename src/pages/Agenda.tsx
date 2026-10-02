@@ -2,53 +2,21 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const schedule = [
-  { time: "09:00 AM", title: "Reporting Starts" },
-  { time: "10:00 AM", title: "Opening remarks" },
-  { time: "10:10 AM", title: "Keynote", speaker: "Cherish Santoshi" },
-  {
-    time: "10:30 AM",
-    title: "Unlock AI anywhere with Google Distributed Cloud",
-    speaker: "Mohit Gulati",
-  },
-  {
-    time: "11:05 AM",
-    title: "Using social media to find opportunities",
-    speaker: "Sejal Sud",
-  },
-  {
-    time: "11:40 AM",
-    title: "Firebase Studio - Your ultimate product development toolkit",
-    speaker: "Abhishek Doshi",
-  },
-  {
-    time: "12:20 PM",
-    title: "Serverless AI Agents with Google ADK and Cloud Run",
-    speaker: "Anubhav Singh",
-  },
-  // {
-  //   time: "12:10 PM",
-  //   title: "Content Contest",
-  //   speaker: "GDG Cloud Chandigarh Team",
-  // },
-  { time: "12:55 PM", title: "Lunch Break" },
-  {
-    time: "1:55 PM",
-    title: "Building Multi-Agent Systems with Google A2A & ADK",
-    speaker: "Gaurav Kheterpal",
-  },
-  {
-    time: "2:35 PM",
-    title: "Panel Discussion",
-  },
-  {
-    time: "3:20 PM",
-    title: "Quiz / Competition",
-    speaker: "GDG Cloud Chandigarh Team",
-  },
-  { time: "3:50 PM", title: "Facilitation Ceremony" },
-  { time: "4:20 PM", title: "Group Picture" },
-  { time: "4:50 PM", title: "Swag Distribution & Networking" },
+// Tentative running order for 23 October 2026. Add titles and speakers as
+// sessions are confirmed.
+const schedule: { time: string; title: string; speaker?: string }[] = [
+  { time: "09:30 AM", title: "Reporting Starts" },
+  { time: "10:00 AM", title: "Opening Remarks" },
+  { time: "10:15 AM", title: "Keynote" },
+  { time: "10:45 AM", title: "Tech Talk: Google Cloud" },
+  { time: "11:30 AM", title: "Tech Talk: AI/ML" },
+  { time: "12:15 PM", title: "Tech Talk: DevOps" },
+  { time: "01:00 PM", title: "Lunch Break" },
+  { time: "02:00 PM", title: "Hands-on Session" },
+  { time: "02:45 PM", title: "Panel Discussion" },
+  { time: "03:30 PM", title: "Quiz / Competition", speaker: "GDG Cloud Chandigarh Team" },
+  { time: "04:00 PM", title: "Felicitation Ceremony & Group Picture" },
+  { time: "04:30 PM", title: "Swag Distribution & Networking" },
 ];
 
 export default function Agenda() {
@@ -65,13 +33,13 @@ export default function Agenda() {
       {/* Desktop/Laptop header image */}
       <img
         src="/images/header.png"
-        alt="Cloud Community Days 2025 Logo"
+        alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain rounded-xl shadow hidden sm:block"
       />
       {/* Mobile header image */}
       <img
         src="/images/mobile_header.png"
-        alt="Cloud Community Days 2025 Mobile Logo"
+        alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
       <section className="container py-8 md:py-16">
@@ -81,7 +49,10 @@ export default function Agenda() {
             <div className="p-6 flex flex-col text-center">
               <h2 className="font-display text-xl md:text-4xl mb-4">Agenda</h2>
               <p className="text-muted-foreground text-sm md:text-base mb-6">
-                Full day of keynotes, breakouts, and hands-on labs.
+                Full day of keynotes, breakouts, and hands-on labs on 23rd October 2026.
+              </p>
+              <p className="text-muted-foreground text-xs md:text-sm">
+                Timings are tentative; sessions and speakers will be announced soon.
               </p>
             </div>
           </aside>

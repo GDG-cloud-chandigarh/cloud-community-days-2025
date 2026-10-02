@@ -1,47 +1,22 @@
 import { Helmet } from "react-helmet-async";
+import { UserRound } from "lucide-react";
 
-const speakers = [
-  {
-    name: "Mohit Gulati",
-    title: "Product Management",
-    company: "Google",
-    photo: "/pfp/mohit.jpeg",
-    linkedin: "https://www.linkedin.com/in/mohitgulati/",
-  },
-  {
-    name: "Sejal Sud",
-    title: "Content Creator",
-    company: "",
-    photo: "/pfp/sejal.jpeg",
-    linkedin: "https://www.linkedin.com/in/sejal-sud-762664162/",
-    twitter: "https://x.com/SejalSud",
-    youtube: "https://www.youtube.com/channel/UCaTBVfF34POcHFRnnxz68oA",
-  },
-  {
-    name: "Gaurav Kheterpal",
-    title: "CEO & Founder",
-    company: "Vanshiv Technologies",
-    photo: "/pfp/gaurav.jpeg",
-    linkedin: "https://www.linkedin.com/in/gauravkheterpal/",
-    twitter: "https://x.com/gauravkheterpal",
-  },
-  {
-    name: "Abhishek Doshi",
-    title: "Senior Software Engineer",
-    company: "Qvin",
-    photo: "/pfp/abhishek.jpeg",
-    linkedin: "https://www.linkedin.com/in/abhishekdoshi26/",
-    twitter: "https://x.com/AbhishekDoshi26",
-  },
-  {
-    name: "Anubhav Singh",
-    title: "AI Engineer",
-    company: "Weights & Biases",
-    photo: "/pfp/anubhav.jpg",
-    linkedin: "https://linkedin.com/in/xprilion",
-    twitter: "https://x.com/xprilion",
-  },
-];
+type Speaker = {
+  name: string;
+  title: string;
+  company?: string;
+  /** Path under /public, e.g. "/pfp/jane.jpeg". Without one the card shows a placeholder. */
+  photo?: string;
+  linkedin?: string;
+  twitter?: string;
+  youtube?: string;
+};
+
+// One slot per topic until speakers are confirmed. Replace each with the real
+// speaker (name, title, company, photo in public/pfp/) as they are announced.
+const speakers: Speaker[] = ["Google Cloud", "AI/ML", "DevOps", "Gemini", "Firebase", "Kubernetes"].map(
+  (topic) => ({ name: "Speaker TBA", title: topic })
+);
 
 export default function Speakers() {
   return (
@@ -49,13 +24,13 @@ export default function Speakers() {
       {/* Desktop/Laptop header image */}
       <img
         src="/images/header.png"
-        alt="Cloud Community Days 2025 Logo"
+        alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
       {/* Mobile header image */}
       <img
         src="/images/mobile_header.png"
-        alt="Cloud Community Days 2025 Mobile Logo"
+        alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
       <section className="container py-16">
@@ -67,25 +42,34 @@ export default function Speakers() {
           />
           <link rel="canonical" href="/speakers" />
         </Helmet>
-        <h1 className="font-display text-4xl mb-8">Speakers</h1>
+        <h1 className="font-display text-4xl mb-2">Speakers</h1>
+        <p className="text-muted-foreground mb-8">Speakers for 23rd October 2026 will be announced soon.</p>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {speakers.map((sp, i) => (
             <div
               key={i}
               className="bg-white border-2 border-black border-t-4 border-r-4 shadow-xl flex flex-col p-6 items-center text-center aspect-square"
             >
-              <img
-                src={sp.photo}
-                alt={sp.name}
-                className="h-32 w-32 rounded-full mb-4 object-cover"
-              />
+              {sp.photo ? (
+                <img
+                  src={sp.photo}
+                  alt={sp.name}
+                  className="h-32 w-32 rounded-full mb-4 object-cover"
+                />
+              ) : (
+                <div className="h-32 w-32 rounded-full mb-4 flex items-center justify-center bg-muted">
+                  <UserRound aria-hidden="true" strokeWidth={1.25} className="h-16 w-16 text-muted-foreground" />
+                </div>
+              )}
               <h2 className="font-bold text-lg mb-1">{sp.name}</h2>
               <div className="text-sm text-muted-foreground mb-1">
                 {sp.title}
               </div>
-              <div className="text-sm text-muted-foreground mb-1">
-                {sp.company}
-              </div>
+              {sp.company && (
+                <div className="text-sm text-muted-foreground mb-1">
+                  {sp.company}
+                </div>
+              )}
               <div className="flex gap-3 mt-2">
                 {sp.linkedin && (
                   <a

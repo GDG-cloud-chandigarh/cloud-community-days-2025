@@ -10,7 +10,7 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/cherishsantoshi/",
   },
   {
-    name: "Tushar shah",
+    name: "Tushar Shah",
     role: "Co-Organizer",
     photo: "/pfp/tushar.jpeg",
     linkedin: "https://www.linkedin.com/in/tushar21shah/",
@@ -18,50 +18,38 @@ const teamMembers = [
   // Add more team members here
 ];
 
+// The 2026 core team, kept in step with the DevFest Chandigarh 2026 site.
 const volunteers = [
   {
     name: "Purahan Gupta",
-    role: "Volunteer",
+    role: "Core Team",
     photo: "/pfp/purahan.JPG",
     linkedin: "https://www.linkedin.com/in/purahan/",
   },
   {
-    name: "Jashan Bansal",
-    role: "Volunteer",
-    photo: "/pfp/jashan.jpg",
-    linkedin: "https://www.linkedin.com/in/jashan-bansal-02309b317/",
-  },
-  {
-    name: "Manmohan Singh",
-    role: "Volunteer",
-    photo: "/pfp/manmohan.jpeg",
-    linkedin: "https://www.linkedin.com/in/manmohan197814/",
-  },
-  {
-    name: "Manik",
-    role: "Volunteer",
-    photo: "/pfp/manik.jpeg",
-    linkedin: "https://www.linkedin.com/in/mrmanik/",
+    name: "Divanshi Arora",
+    role: "Core Team",
+    photo: "/pfp/divanshi.jpeg",
+    linkedin: "https://www.linkedin.com/in/divanshi-arora-/",
   },
   {
     name: "Shatakshi",
-    role: "Volunteer",
+    role: "Core Team",
     photo: "/pfp/shatakshi.jpeg",
     linkedin: "https://www.linkedin.com/in/shatakshi-bhardwaj-445295281/",
   },
   {
-    name: "Harsh Chopra",
-    role: "Volunteer",
-    photo: "/pfp/harsh.jpg",
-    linkedin: "https://www.linkedin.com/in/harshchopra79/",
-  },
-  {
     name: "Krishanu Mishra",
-    role: "Volunteer",
+    role: "Core Team",
     photo: "/pfp/krishanu.jpg",
     linkedin: "https://www.linkedin.com/in/krishanu-mishra-aa531b276/",
   },
-  // Add more volunteers here
+  {
+    name: "Sarang Ahlawat",
+    role: "Core Team",
+    photo: "/pfp/sarang.jpeg",
+    linkedin: "https://www.linkedin.com/in/sarangahlawat/",
+  },
 ];
 
 export default function Team() {
@@ -70,13 +58,13 @@ export default function Team() {
       {/* Desktop/Laptop header image */}
       <img
         src="/images/header.png"
-        alt="Cloud Community Days 2025 Logo"
+        alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
       {/* Mobile header image */}
       <img
         src="/images/mobile_header.png"
-        alt="Cloud Community Days 2025 Mobile Logo"
+        alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
       <section className="container py-16">
@@ -97,7 +85,7 @@ export default function Team() {
                 className="flex flex-col items-center p-6 text-center w-full max-w-xs mx-auto"
               >
                 <Avatar className="w-32 h-32 mb-4">
-                  <img src={member.photo} alt={member.name} />
+                  <img src={member.photo} alt={member.name} className="h-full w-full object-cover" />
                 </Avatar>
                 <div className="font-semibold">{member.name}</div>
                 <div className="text-muted-foreground text-sm">
@@ -117,16 +105,16 @@ export default function Team() {
             ))}
           </div>
         </div>
-        <h2 className="font-display text-2xl mb-6 text-center">Volunteers</h2>
+        <h2 className="font-display text-2xl mb-6 text-center">Core Team</h2>
         <div className="flex justify-center mb-12">
-          <div className="grid gap-8 grid-cols-2 lg:grid-cols-6">
+          <div className="grid gap-8 grid-cols-2 lg:grid-cols-5">
             {volunteers.map((vol) => (
               <Card
                 key={vol.name}
                 className="flex flex-col items-center p-6 text-center w-full max-w-xs mx-auto"
               >
                 <Avatar className="w-28 h-28 mb-4">
-                  <img src={vol.photo} alt={vol.name} />
+                  <img src={vol.photo} alt={vol.name} className="h-full w-full object-cover" />
                 </Avatar>
                 <div className="font-semibold">{vol.name}</div>
                 <div className="text-muted-foreground text-sm">{vol.role}</div>

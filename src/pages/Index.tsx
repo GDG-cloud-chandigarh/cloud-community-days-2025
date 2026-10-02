@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Cloud, Cpu, GitBranch, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { EVENT_START, REGISTER_URL } from "@/lib/event";
 
 const Index = () => {
   // Countdown logic
-  const targetDate = new Date("2025-08-30T00:00:00");
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
 
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
-      const diff = targetDate.getTime() - now.getTime();
+      const diff = EVENT_START.getTime() - now.getTime();
       if (diff > 0) {
         setTimeLeft({
           days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -29,18 +29,17 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const agendaPreview = [
-    { time: "09:00 AM", title: "Reporting Starts" },
-    { time: "12:10 PM", title: "Content Contest", speaker: "GDG Cloud Chandigarh Team", },
-    // { time: "11:20 AM", title: "Dart on Cloud Run for Flutter developers to go full-stack!", speaker: "Aditya Thakur" },
-    { time: "5:00 PM", title: "Closing Remarks" },
+  const agendaPreview: { time: string; title: string; speaker?: string }[] = [
+    { time: "09:30 AM", title: "Reporting Starts" },
+    { time: "10:15 AM", title: "Keynote" },
+    { time: "04:30 PM", title: "Swag Distribution & Networking" },
   ];
 
   return (
     <div className="bg-grid-subtle">
       <Helmet>
-        <title>Cloud Community Days — Cloud • DevOps • AI/ML</title>
-        <meta name="description" content="Join Cloud Community Days for world-class talks on Cloud, DevOps, and AI/ML, plus hands-on sessions and networking." />
+        <title>Cloud Community Days 2026 | Cloud • DevOps • AI/ML</title>
+        <meta name="description" content="Cloud Community Days 2026 in Chandigarh on 23 October: talks on Cloud, DevOps, and AI/ML, plus hands-on sessions and networking." />
         <link rel="canonical" href="/" />
       </Helmet>
 
@@ -48,17 +47,17 @@ const Index = () => {
       <section className="container pt-8 pb-10 md:pt-16 md:pb-28">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
           <div className="space-y-6 animate-fade-in">
-            <img src="/images/ccd-logo.png" alt="Cloud Community Days 2025 Logo" className="w-80 md:w-full max-w-xs md:max-w-md" style={{ height: "auto" }} />
+            <img src="/images/ccd-logo.png" alt="Cloud Community Days 2026 Logo" className="w-80 md:w-full max-w-xs md:max-w-md" style={{ height: "auto" }} />
             <p className="text-base md:text-lg text-muted-foreground max-w-prose mx-auto">
               The biggest, most exciting cloud community event of the year - focused on Cloud, DevOps, AI/ML, and developer networking.
             </p>
             <div className="flex flex-wrap gap-2 md:gap-3">
-              <span className="px-4 py-2 bg-black text-white text-xs md:text-base">Chandigarh • 30th Aug 2025</span>
+              <span className="px-4 py-2 bg-black text-white text-xs md:text-base">Chandigarh • 23rd Oct 2026</span>
               <span className="px-4 py-2 bg-black text-white text-xs md:text-base">In-person</span>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <a
-                href="https://allevents.in/mohali/cloud-community-days-chandigarh-tickets/80002086552448"
+                href={REGISTER_URL}
                 className="w-full sm:w-36 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black text-center transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
               >
                 Register Now
@@ -248,7 +247,7 @@ const Index = () => {
             <p className="text-muted-foreground mt-2 text-sm md:text-base">Limited seats. Save your spot today.</p>
           </div>
           <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
-            <Button asChild size="lg" className="flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white w-full md:w-auto"><a href="https://allevents.in/mohali/cloud-community-days-chandigarh-tickets/80002086552448">Register Now</a></Button>
+            <Button asChild size="lg" className="flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white w-full md:w-auto"><a href={REGISTER_URL}>Register Now</a></Button>
             <Button asChild size="lg" className="flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white w-full md:w-auto"><Link to="/agenda">View Agenda</Link></Button>
           </div>
         </div>

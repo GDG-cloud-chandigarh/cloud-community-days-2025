@@ -1,6 +1,6 @@
-# Cloud Community Days 2025 Chandigarh Website
+# Cloud Community Days 2026 Chandigarh Website
 
-This is the official website for **Cloud Community Days 2025**, organized by [GDG Cloud Chandigarh](https://gdgcloudchd.in/). The site provides event details, agenda, speaker information, registration, gallery, and more for the region's premier community event focused on Cloud, DevOps, AI/ML, and developer technologies.
+This is the official website for **Cloud Community Days 2026** (23 October 2026), organized by [GDG Cloud Chandigarh](https://gdgcloudchd.in/). The site provides event details, agenda, speaker information, registration, gallery, and more for the region's premier community event focused on Cloud, DevOps, AI/ML, and developer technologies.
 
 ## 🚀 Quick Start
 

@@ -33,13 +33,13 @@ export default function Agenda() {
       </Helmet>
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/header.png"
+        src="/images/page-banner.png"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain rounded-xl shadow hidden sm:block"
       />
       {/* Mobile header image */}
       <img
-        src="/images/mobile_header.png"
+        src="/images/page-banner-mobile.png"
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />

@@ -6,7 +6,7 @@ type Speaker = {
   name: string;
   title: string;
   company?: string;
-  /** Path under /public, e.g. "/pfp/jane.jpeg". Without one the card shows a placeholder. */
+  /** Path under /public, e.g. "/speakers/jane.jpg". Without one the card shows a placeholder. */
   photo?: string;
   linkedin?: string;
   twitter?: string;
@@ -14,7 +14,7 @@ type Speaker = {
 };
 
 // One slot per topic until speakers are confirmed. Replace each with the real
-// speaker (name, title, company, photo in public/pfp/) as they are announced.
+// speaker (name, title, company, photo in public/speakers/) as they are announced.
 const speakers: Speaker[] = ["Google Cloud", "AI/ML", "DevOps", "Gemini", "Firebase", "Kubernetes"].map(
   (topic) => ({ name: "Speaker TBA", title: topic })
 );
@@ -24,13 +24,13 @@ export default function Speakers() {
     <>
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/header.png"
+        src="/images/page-banner.png"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
       {/* Mobile header image */}
       <img
-        src="/images/mobile_header.png"
+        src="/images/page-banner-mobile.png"
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
@@ -93,7 +93,7 @@ export default function Speakers() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/logos/x.png" alt="x" className="h-6 w-6" />
+                    <img src="/logos/x-twitter.png" alt="x" className="h-6 w-6" />
                   </a>
                 )}
                 {sp.youtube && (

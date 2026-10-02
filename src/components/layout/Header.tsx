@@ -26,7 +26,7 @@ export default function Header() {
 			<nav className="container flex items-center justify-between h-16">
 				<NavLink to="/" className="flex items-center gap-2 font-display text-lg">
 					<img
-						src="/images/gdgcloudchd.png"
+						src="/images/gdg-cloud-chandigarh.png"
 						alt="Google Developer Groups Cloud Chandigarh"
 						className="h-auto w-auto"
 						style={{ maxWidth: "180px" }}

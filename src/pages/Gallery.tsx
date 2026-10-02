@@ -6,13 +6,13 @@ export default function Gallery() {
     <>
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/header.png"
+        src="/images/page-banner.png"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
       {/* Mobile header image */}
       <img
-        src="/images/mobile_header.png"
+        src="/images/page-banner-mobile.png"
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
@@ -26,15 +26,15 @@ export default function Gallery() {
         <h1 className="font-display text-4xl mb-8">Gallery</h1>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            "/images/devfest1.jpg",
-            "/images/devfest2.jpg",
-            "/images/devfest3.jpg",
-            "/images/io1.png",
-            "/images/io2.png",
-            "/images/io3.png",
-            "/images/ccd1.jpg",
-            "/images/ccd2.jpg",
-            "/images/ccd3.jpg",
+            "/gallery/devfest-1.jpg",
+            "/gallery/devfest-2.jpg",
+            "/gallery/devfest-3.jpg",
+            "/gallery/io-extended-1.png",
+            "/gallery/io-extended-2.png",
+            "/gallery/io-extended-3.png",
+            "/gallery/cloud-community-day-1.jpg",
+            "/gallery/cloud-community-day-2.jpg",
+            "/gallery/cloud-community-day-3.jpg",
           ].map((src, i) => (
             <div key={i} className="aspect-square rounded-xl border bg-card overflow-hidden shadow-2xl">
               <img

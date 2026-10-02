@@ -53,7 +53,7 @@ const Index = () => {
       <section className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
           <div className="space-y-5 2xl:space-y-6 animate-fade-in">
-            <img src="/images/ccd-logo.png" alt="Cloud Community Days 2026 Logo" className="w-80 md:w-full max-w-xs md:max-w-sm 2xl:max-w-md" style={{ height: "auto" }} />
+            <img src="/images/ccd-2026-logo.png" alt="Cloud Community Days 2026 Logo" className="w-80 md:w-full max-w-xs md:max-w-sm 2xl:max-w-md" style={{ height: "auto" }} />
             <p className="text-base md:text-lg text-muted-foreground max-w-prose mx-auto">
               The biggest, most exciting cloud community event of the year - focused on Cloud, DevOps, AI/ML, and developer networking.
             </p>
@@ -84,7 +84,7 @@ const Index = () => {
           </div>
           <div className="relative aspect-[1706/689] md:aspect-auto md:h-[340px] 2xl:h-[420px] overflow-hidden mt-2 md:mt-0">
             <img
-              src="/images/hero-section.png"
+              src="/images/hero-community.png"
               alt="Audience at Cloud Community Days in Chandigarh"
               className="absolute inset-0 w-full h-full object-contain animate-enter"
               decoding="async"
@@ -212,7 +212,7 @@ const Index = () => {
         </header>
         <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-5">
           {[
-            { name: "Google Cloud", logo: "/logos/gcp.png" },
+            { name: "Google Cloud", logo: "/logos/google-cloud.png" },
             { name: "Gemini API", logo: "/logos/gemini.png" },
             { name: "Firebase", logo: "/logos/firebase.png" },
             { name: "TensorFlow", logo: "/logos/tensorflow.png" },
@@ -274,9 +274,9 @@ const Index = () => {
         </header>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
-            "/images/devfest1.jpg",
-            "/images/io1.png",
-            "/images/ccd1.jpg",
+            "/gallery/devfest-1.jpg",
+            "/gallery/io-extended-1.png",
+            "/gallery/cloud-community-day-1.jpg",
           ].map((src, i) => (
             <div key={i} className="rounded-xl overflow-hidden border bg-card hover-scale">
               <img
@@ -321,7 +321,7 @@ const Index = () => {
           {/* Right: Image */}
           <div className="hidden lg:flex justify-center mt-8 md:mt-0">
             <img
-              src="/images/contactus.png"
+              src="/images/contact-community.png"
               alt="Cloud Community Days Chandigarh"
               className="rounded-xl w-full max-w-xs md:max-w-md object-cover"
               loading="lazy"

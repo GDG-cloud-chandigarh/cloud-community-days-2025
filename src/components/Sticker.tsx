@@ -30,7 +30,7 @@ export function Sticker({ shape, colour, className, rotate = 0, delay = 0 }: Sti
   const { width, height } = SHAPES[shape];
   return (
     <img
-      src={`/elements/${shape}_${colour}.svg`}
+      src={`/elements/${shape}-${colour}.svg`}
       alt=""
       aria-hidden="true"
       width={width}

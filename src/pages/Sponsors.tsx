@@ -5,31 +5,31 @@ import { Button } from "@/components/ui/button";
 // Same community partners as the DevFest Chandigarh 2026 site. `dark` puts a
 // white logo on a dark tile so it stays visible.
 const COMMUNITY_PARTNERS: { name: string; img: string; dark?: boolean }[] = [
-  { name: "ACM Chapter, CCE", img: "/partners/acm_chapter_cce.jpeg" },
-  { name: "Alexa Developers Community, Chandigarh University", img: "/partners/alexa_developers_community_cu.png" },
-  { name: "BUG2BUILD", img: "/partners/bug2build.jpeg" },
-  { name: "Builders Hub", img: "/partners/builders_hub.jpg" },
-  { name: "C Square", img: "/partners/c_square.png" },
-  { name: "Code Zen", img: "/partners/code_zen.jpg" },
+  { name: "ACM Chapter, CCE", img: "/partners/acm-chapter-cce.jpg" },
+  { name: "Alexa Developers Community, Chandigarh University", img: "/partners/alexa-developers-community-cu.png" },
+  { name: "BUG2BUILD", img: "/partners/bug2build.jpg" },
+  { name: "Builders Hub", img: "/partners/builders-hub.jpg" },
+  { name: "C Square", img: "/partners/c-square.png" },
+  { name: "Code Zen", img: "/partners/code-zen.jpg" },
   { name: "Devantra", img: "/partners/devantra.jpg" },
-  { name: "Devengers", img: "/partners/devengers.jpeg" },
-  { name: "DevPath", img: "/partners/devpath.jpeg" },
-  { name: "E-Cell CEC, CGC Landran", img: "/partners/ecell_cec_cgc_landran.jpg" },
-  { name: "E-Cell CGC-COE", img: "/partners/ecell_cgc_coe.jpeg" },
+  { name: "Devengers", img: "/partners/devengers.jpg" },
+  { name: "DevPath", img: "/partners/devpath.jpg" },
+  { name: "E-Cell CEC, CGC Landran", img: "/partners/ecell-cec-cgc-landran.jpg" },
+  { name: "E-Cell CGC-COE", img: "/partners/ecell-cgc-coe.jpg" },
   { name: "Fusion", img: "/partners/fusion.png", dark: true },
-  { name: "GDG On Campus SVIET", img: "/partners/gdg_on_campus_sviet.jpeg" },
-  { name: "GeeksforGeeks Campus Body, Chandigarh University", img: "/partners/gfg_campus_body_cu.png" },
+  { name: "GDG On Campus SVIET", img: "/partners/gdg-on-campus-sviet.jpg" },
+  { name: "GeeksforGeeks Campus Body, Chandigarh University", img: "/partners/gfg-campus-body-cu.png" },
   { name: "Hacknfinity", img: "/partners/hacknfinity.jpg" },
-  { name: "OSEN Chandigarh", img: "/partners/osen_chandigarh.jpg" },
-  { name: "Project Hub Community", img: "/partners/project_hub.jpg" },
-  { name: "Recess Tribe Community", img: "/partners/recess_tribe.jpg" },
+  { name: "OSEN Chandigarh", img: "/partners/osen-chandigarh.jpg" },
+  { name: "Project Hub Community", img: "/partners/project-hub.jpg" },
+  { name: "Recess Tribe Community", img: "/partners/recess-tribe.jpg" },
   { name: "SheBuilds", img: "/partners/shebuilds.jpg" },
   { name: "SkillBugz", img: "/partners/skillbugz.jpg" },
-  { name: "Spark Tech AI Hub", img: "/partners/spark_tech_ai_hub.jpg" },
-  { name: "The Ascent Circle", img: "/partners/the_ascent_circle.png" },
-  { name: "The Uniques Community", img: "/partners/the_uniques.png" },
-  { name: "The Visionary Minds", img: "/partners/the_visionary_minds.jpg" },
-  { name: "Venture Nexus", img: "/partners/venture_nexus.jpg" },
+  { name: "Spark Tech AI Hub", img: "/partners/spark-tech-ai-hub.jpg" },
+  { name: "The Ascent Circle", img: "/partners/the-ascent-circle.png" },
+  { name: "The Uniques Community", img: "/partners/the-uniques.png" },
+  { name: "The Visionary Minds", img: "/partners/the-visionary-minds.jpg" },
+  { name: "Venture Nexus", img: "/partners/venture-nexus.jpg" },
 ];
 
 const ON_CAMPUS_PARTNERS: { img: string }[] = [
@@ -50,13 +50,13 @@ export default function Sponsors() {
     <>
       {/* Desktop/Laptop header image */}
       <img
-        src="/images/header.png"
+        src="/images/page-banner.png"
         alt="Cloud Community Days 2026 Logo"
         className="w-full mb-6 object-contain hidden sm:block"
       />
       {/* Mobile header image */}
       <img
-        src="/images/mobile_header.png"
+        src="/images/page-banner-mobile.png"
         alt="Cloud Community Days 2026 Mobile Logo"
         className="w-full object-contain block sm:hidden"
       />
@@ -78,7 +78,7 @@ export default function Sponsors() {
           <h2 className="font-display text-2xl mb-4 text-center">Title Sponsors</h2>
           <div className="flex flex-wrap gap-6 items-center justify-center">
             <div className="flex flex-col items-center">
-              <img src="/logos/googlefordeveloper.svg" alt="Title Sponsor" className="h-16 mb-2" />
+              <img src="/logos/google-for-developers.svg" alt="Title Sponsor" className="h-16 mb-2" />
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function Sponsors() {
           <h2 className="font-display text-2xl mb-4 text-center">Venue Partner</h2>
           <div className="flex flex-wrap gap-6 items-center justify-center">
             <div className="flex flex-col items-center">
-              <img src="/logos/cu-logo.png" alt="Chandigarh University" className="h-20 my-6" />
+              <img src="/logos/chandigarh-university.png" alt="Chandigarh University" className="h-20 my-6" />
             </div>
           </div>
         </div>

@@ -18,6 +18,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import { SiteLoader } from "./components/SiteLoader";
+import { RevealOnScroll } from "./components/RevealOnScroll";
 import Team from "./pages/Team";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <SiteLoader />
+            <RevealOnScroll />
             <ScrollToTop />
             <Header />
             <main>

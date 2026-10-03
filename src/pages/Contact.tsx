@@ -53,7 +53,7 @@ export default function Contact() {
         <Sticker shape="cloud" colour="green" className="absolute left-[8%] top-[22%] h-20 hidden lg:block" rotate={-6} />
         <Sticker shape="star" colour="red" className="absolute left-[14%] top-[62%] h-14 hidden lg:block" rotate={12} delay={3} />
         <Sticker shape="blocks" colour="yellow" className="absolute right-[7%] top-[35%] h-16 hidden lg:block" delay={1} />
-        <div className="max-w-xl mx-auto bg-card shadow-2xl p-8 items-center justify-center bg-white border-2 border-black border-t-4 border-r-4">
+        <div data-reveal className="max-w-xl mx-auto bg-card shadow-2xl p-8 items-center justify-center bg-white border-2 border-black border-t-4 border-r-4">
           <h1 className="font-display text-4xl mb-4 text-center">Contact Us</h1>
           <p className="text-muted-foreground mb-8 text-center">
             We'd love to hear from you! 
@@ -101,7 +101,7 @@ export default function Contact() {
               />
             </div>
             <button
-              className="h-12 px-6 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
+              className="lift h-12 px-6 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
               type="submit"
             >
               Send Message

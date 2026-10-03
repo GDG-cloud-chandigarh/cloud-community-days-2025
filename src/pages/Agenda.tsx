@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Sticker } from "@/components/Sticker";
 import { Seo } from "@/components/Seo";
 import { Link } from "react-router-dom";
@@ -39,7 +40,7 @@ export default function Agenda() {
       <section className="container py-8 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Sticky Agenda Section */}
-          <aside className="md:col-span-1 md:sticky md:top-24 h-fit">
+          <aside data-reveal className="md:col-span-1 md:sticky md:top-24 h-fit">
             <div className="p-6 flex flex-col text-center">
               <h1 className="font-display text-xl md:text-4xl mb-4">Agenda</h1>
               <p className="text-muted-foreground text-sm md:text-base mb-6">
@@ -61,7 +62,7 @@ export default function Agenda() {
           <main className="md:col-span-2">
             <ul className="space-y-6">
               {schedule.map((item, idx) => (
-                <li key={idx} className="relative">
+                <li key={idx} data-reveal style={{ "--reveal-delay": `${Math.min(idx, 4) * 80}ms` } as CSSProperties} className="relative">
                   <div className="flex items-start gap-4">
                     <div className="flex flex-col items-center justify-center min-w-[80px]">
                       <div className="bg-[hsl(217_90%_45%)] text-white font-bold px-3 py-2 text-xs md:text-sm shadow">

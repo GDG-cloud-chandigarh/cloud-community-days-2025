@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Sticker } from "@/components/Sticker";
 import { Seo } from "@/components/Seo";
 
@@ -32,11 +33,11 @@ export default function Gallery() {
             "/gallery/cloud-community-day-2.jpg",
             "/gallery/cloud-community-day-3.jpg",
           ].map((src, i) => (
-            <div key={i} className="aspect-square rounded-xl border bg-card overflow-hidden shadow-2xl">
+            <div key={i} data-reveal style={{ "--reveal-delay": `${(i % 3) * 120}ms` } as CSSProperties} className="group aspect-square rounded-xl border bg-card overflow-hidden shadow-2xl">
               <img
                 src={src}
                 alt={`Cloud Community Days gallery image ${i + 1}`}
-                className="w-full h-full object-cover"
+                className="transition-transform duration-500 group-hover:scale-105 w-full h-full object-cover"
                 loading="lazy"
               />
             </div>

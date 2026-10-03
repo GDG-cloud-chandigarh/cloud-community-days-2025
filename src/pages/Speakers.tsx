@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Sticker } from "@/components/Sticker";
 import { Seo } from "@/components/Seo";
 import { UserRound } from "lucide-react";
@@ -44,6 +45,8 @@ export default function Speakers() {
           {speakers.map((sp, i) => (
             <div
               key={i}
+              data-reveal
+              style={{ "--reveal-delay": `${(i % 3) * 120}ms` } as CSSProperties}
               className="w-full max-w-xs bg-white border-2 border-black border-t-4 border-r-4 shadow-xl flex flex-col p-6 items-center justify-center text-center aspect-square"
             >
               {sp.photo ? (

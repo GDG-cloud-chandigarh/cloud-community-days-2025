@@ -19,8 +19,12 @@ export function SiteLoader() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    // The hero entrance (index.css, .hero-rise) waits for this flag.
+    const markLoaded = () => document.documentElement.setAttribute("data-loaded", "");
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setDone(true);
+      markLoaded();
       return;
     }
 
@@ -28,6 +32,7 @@ export function SiteLoader() {
     const finish = () => {
       clearTimeout(timer);
       setDone(true);
+      markLoaded();
     };
 
     timer = setTimeout(finish, MAX_MS);

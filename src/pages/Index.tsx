@@ -6,6 +6,7 @@ import { Cloud, Cpu, GitBranch, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { EVENT_START, REGISTER_URL } from "@/lib/event";
+import { COMMUNITY_PARTNERS } from "@/lib/partners";
 
 const Index = () => {
   // Countdown logic
@@ -48,44 +49,47 @@ const Index = () => {
       <div className="flex min-h-[calc(100svh-4rem)] flex-col justify-center gap-10 py-10 md:gap-8 2xl:gap-14">
       <section className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
-          <div className="space-y-5 2xl:space-y-6 animate-fade-in">
-            <h1>
+          <div className="space-y-5 2xl:space-y-6">
+            <h1 className="hero-drift" style={{ "--hero-delay": "0ms" } as React.CSSProperties}>
               {/* width/height reserve the space, so the page does not jump when it loads. */}
               <img src="/images/ccd-2026-logo.png" alt="Cloud Community Days 2026" width={884} height={501} fetchPriority="high" className="w-80 md:w-full max-w-xs md:max-w-sm 2xl:max-w-md" style={{ height: "auto" }} />
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground max-w-prose mx-auto">
+            <p className="hero-rise text-base md:text-lg text-muted-foreground max-w-prose mx-auto" style={{ "--hero-delay": "150ms" } as React.CSSProperties}>
               The biggest, most exciting cloud community event of the year - focused on Cloud, DevOps, AI/ML, and developer networking.
             </p>
-            <div className="flex flex-wrap gap-2 md:gap-3">
+            <div className="hero-rise flex flex-wrap gap-2 md:gap-3" style={{ "--hero-delay": "250ms" } as React.CSSProperties}>
               <span className="px-4 py-2 bg-black text-white text-xs md:text-base">Chandigarh • 23rd Oct 2026</span>
               <span className="px-4 py-2 bg-black text-white text-xs md:text-base">In-person</span>
             </div>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
+            <div className="hero-rise flex flex-col sm:flex-row items-center gap-3" style={{ "--hero-delay": "350ms" } as React.CSSProperties}>
               <a
                 href={REGISTER_URL}
-                className="w-full sm:w-36 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black text-center transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
+                className="lift w-full sm:w-36 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black text-center hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
               >
                 Register Now
               </a>
               <Link
                 to="/agenda"
-                className="w-full sm:w-36 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black text-center transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
+                className="lift w-full sm:w-36 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black text-center hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
               >
                 View Agenda
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4 pt-2 text-muted-foreground justify-center lg:justify-start">
+            <div className="hero-rise flex flex-wrap gap-4 pt-2 text-muted-foreground justify-center lg:justify-start" style={{ "--hero-delay": "450ms" } as React.CSSProperties}>
               <div className="flex items-center gap-2"><Cloud /><span>Cloud</span></div>
               <div className="flex items-center gap-2"><Cpu /><span>AI/ML</span></div>
               <div className="flex items-center gap-2"><GitBranch /><span>DevOps</span></div>
               <div className="flex items-center gap-2"><Rocket /><span>Launchpad</span></div>
             </div>
           </div>
-          <div className="relative aspect-[1706/689] md:aspect-auto md:h-[340px] 2xl:h-[420px] overflow-hidden mt-2 md:mt-0">
+          <div
+            className="hero-drift relative aspect-[1706/689] md:aspect-auto md:h-[340px] 2xl:h-[420px] overflow-hidden mt-2 md:mt-0"
+            style={{ "--hero-delay": "150ms", "--hero-dx": "48px", "--hero-dy": "0px" } as React.CSSProperties}
+          >
             <img
               src="/images/hero-community.webp"
               alt="Audience at Cloud Community Days in Chandigarh"
-              className="absolute inset-0 w-full h-full object-contain animate-enter"
+              className="absolute inset-0 w-full h-full object-contain"
               decoding="async"
             />
           </div>
@@ -93,25 +97,25 @@ const Index = () => {
       </section>
 
       {/* Countdown */}
-      <section className="relative w-full px-4 sm:px-8 flex flex-col items-center justify-center animate-fade-in">
+      <section className="hero-rise relative w-full px-4 sm:px-8 flex flex-col items-center justify-center" style={{ "--hero-delay": "550ms" } as React.CSSProperties}>
         <Sticker shape="cloud" colour="blue" className="absolute left-[7%] top-1/2 -mt-8 h-16 hidden lg:block 2xl:left-[12%] 2xl:h-20" rotate={-4} />
         <Sticker shape="star" colour="yellow" className="absolute right-[8%] top-1/2 -mt-8 h-16 hidden lg:block 2xl:right-[13%] 2xl:h-20" rotate={8} delay={2} />
         <h2 className="font-display text-lg sm:text-2xl md:text-3xl 2xl:text-5xl mb-4 text-center">Countdown to Cloud Community Days</h2>
         <div className="flex flex-wrap justify-center gap-6 md:gap-16 2xl:gap-20 text-3xl md:text-5xl 2xl:text-7xl font-bold text-black tabular-nums">
           <div className="flex flex-col items-center">
-            <span>{timeLeft.days}</span>
+            <span key={timeLeft.days} className="digit-flip">{timeLeft.days}</span>
             <span className="text-sm font-normal">Days</span>
           </div>
           <div className="flex flex-col items-center">
-            <span>{timeLeft.hours}</span>
+            <span key={timeLeft.hours} className="digit-flip">{timeLeft.hours}</span>
             <span className="text-sm font-normal">Hours</span>
           </div>
           <div className="flex flex-col items-center">
-            <span>{timeLeft.mins}</span>
+            <span key={timeLeft.mins} className="digit-flip">{timeLeft.mins}</span>
             <span className="text-sm font-normal">Minutes</span>
           </div>
           <div className="flex flex-col items-center">
-            <span>{timeLeft.secs}</span>
+            <span key={timeLeft.secs} className="digit-flip">{timeLeft.secs}</span>
             <span className="text-sm font-normal">Seconds</span>
           </div>
         </div>
@@ -125,8 +129,8 @@ const Index = () => {
             { title: 'Keynotes & Breakouts', desc: 'Hear from engineers and community leaders shaping cloud-native and AI.' },
             { title: 'Hands-on Labs', desc: 'Ship faster with guided labs on Kubernetes, serverless, and MLOps.' },
             { title: 'Networking', desc: 'Connect with builders, founders, and recruiters at Community Night.' },
-          ].map((c) => (
-            <article key={c.title} className="p-4 md:p-6 border bg-card shadow-soft animate-fade-in bg-white border-black border-t-4 border-r-4 font-medium bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
+          ].map((c, idx) => (
+            <article key={c.title} data-reveal style={{ "--reveal-delay": `${idx * 120}ms` } as React.CSSProperties} className="p-4 md:p-6 border bg-card shadow-soft bg-white border-black border-t-4 border-r-4 font-medium bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
               <h3 className="font-medium text-base md:text-lg">{c.title}</h3>
               <p className="text-muted-foreground mt-2 text-sm md:text-base">{c.desc}</p>
             </article>
@@ -135,8 +139,8 @@ const Index = () => {
       </section>
 
       {/* About */}
-      <section id="about" className="container pb-20 animate-fade-in">
-        <header className="relative mb-6">
+      <section id="about" className="container pb-20">
+        <header data-reveal className="relative mb-6">
           <Sticker shape="blocks" colour="green" className="absolute right-2 bottom-0 h-16 hidden lg:block" rotate={4} delay={1} />
           <h2 className="font-display text-xl md:text-3xl">About Cloud Community Days</h2>
           <p className="text-muted-foreground mt-2 max-w-prose text-sm md:text-base">
@@ -144,7 +148,7 @@ const Index = () => {
           </p>
         </header>
         <div className="grid gap-6 md:grid-cols-2">
-          <Card className="w-full bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
+          <Card data-reveal className="w-full bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
             <CardHeader>
               <CardTitle>Mission</CardTitle>
               <CardDescription>Learn, share, and build together</CardDescription>
@@ -153,7 +157,7 @@ const Index = () => {
               We bring practitioners and leaders together to explore real-world cloud architectures, hands-on demos, and the future of AI-enhanced engineering.
             </CardContent>
           </Card>
-          <Card className="w-full bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
+          <Card data-reveal style={{ "--reveal-delay": "150ms" } as React.CSSProperties} className="w-full bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium text-black bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
             <CardHeader>
               <CardTitle>Who should attend?</CardTitle>
               <CardDescription>Engineers • DevOps • Data/AI • Students</CardDescription>
@@ -166,15 +170,15 @@ const Index = () => {
       </section>
 
       {/* Agenda Preview */}
-      <section id="agenda" className="container pb-20 animate-fade-in">
-        <header className="mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+      <section id="agenda" className="container pb-20">
+        <header data-reveal className="mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-xl md:text-3xl">Agenda Highlights</h2>
             <p className="text-muted-foreground mt-2 text-sm md:text-base">
               Glimpse of the day: keynotes, breakouts, and hands-on labs.
             </p>
           </div>
-          <Button asChild variant="outline" className="flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white w-full md:w-auto bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
+          <Button asChild variant="outline" className="lift flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white w-full md:w-auto bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10">
             <Link to="/agenda">View full agenda</Link>
           </Button>
         </header>
@@ -182,6 +186,8 @@ const Index = () => {
           {agendaPreview.map((item, idx) => (
             <div
               key={idx}
+              data-reveal
+              style={{ "--reveal-delay": `${idx * 120}ms` } as React.CSSProperties}
               className="flex items-start gap-4 p-4 border-2 border-black border-t-4 border-r-4 bg-white shadow-lg bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
             >
               <div className="flex flex-col items-center justify-center min-w-[70px]">
@@ -203,8 +209,8 @@ const Index = () => {
       </section>
 
       {/* Featured Topics */}
-      <section id="topics" className="container pb-20 animate-fade-in">
-        <header className="relative mb-8">
+      <section id="topics" className="container pb-20">
+        <header data-reveal className="relative mb-8">
           <Sticker shape="cloud" colour="red" className="absolute right-2 bottom-0 h-14 hidden md:block" rotate={6} delay={4} />
           <h2 className="font-display text-xl md:text-3xl">Featured Topics</h2>
           <p className="text-muted-foreground mt-2 text-sm md:text-base">Explore the latest in cloud, AI, web, and data at Cloud Community Days.</p>
@@ -222,22 +228,59 @@ const Index = () => {
             { name: "Kuberenetes", logo: "/logos/kubernetes.png" },
             { name: "AI/ML", logo: "/logos/ai-ml.png" },
           ].map((topic, idx) => (
-            <div key={idx} className="bg-white border-2 border-black border-t-4 border-r-4 shadow-soft p-4 flex flex-col items-center justify-center gap-2 aspect-[3/2] sm:aspect-[4/3]">
+            <div key={idx} data-reveal style={{ "--reveal-delay": `${idx * 60}ms` } as React.CSSProperties} className="bg-white border-2 border-black border-t-4 border-r-4 shadow-soft p-4 flex flex-col items-center justify-center gap-2 aspect-[3/2] sm:aspect-[4/3]">
               <img src={topic.logo} alt="" className="h-9 md:h-14 max-w-full object-contain" />
               <span className="text-xs md:text-sm text-center font-medium break-words leading-tight">{topic.name}</span>
             </div>
           ))}
         </div>
       </section>
-      <section id="location" className="container pb-20 animate-fade-in">
-        <header className="relative mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+      {/* Community partners: a slow marquee of every logo; it pauses on hover. */}
+      <section id="partners" className="pb-20">
+        <div className="container">
+          <header data-reveal className="mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+            <div>
+              <h2 className="font-display text-xl md:text-3xl">Community Partners</h2>
+              <p className="text-muted-foreground mt-2 text-sm md:text-base">
+                {COMMUNITY_PARTNERS.length} communities from across the region, building Cloud Community Days with us.
+              </p>
+            </div>
+            <Link
+              to="/sponsors"
+              className="lift w-full md:w-36 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
+            >
+              All partners
+            </Link>
+          </header>
+        </div>
+        <div data-reveal className="marquee overflow-hidden border-y-2 border-black bg-white py-6">
+          {/* Two identical runs; the track slides by one run's width, so the loop has no seam. */}
+          <div className="marquee-track flex w-max">
+            {[0, 1].map((run) => (
+              <ul key={run} aria-hidden={run === 1} className="flex shrink-0 items-center gap-10 pr-10">
+                {COMMUNITY_PARTNERS.map((partner) => (
+                  <li
+                    key={partner.name}
+                    className={`flex h-16 w-28 shrink-0 items-center justify-center md:h-20 md:w-36 ${partner.dark ? "bg-neutral-900 px-2" : ""}`}
+                  >
+                    <img src={partner.img} alt={run === 0 ? partner.name : ""} loading="lazy" className="h-full w-full object-contain" />
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="location" className="container pb-20">
+        <header data-reveal className="relative mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
           <Sticker shape="star" colour="blue" className="absolute right-2 bottom-0 h-14 hidden md:block" rotate={-8} delay={2} />
           <div>
             <h2 className="font-display text-xl md:text-3xl">Location — Chandigarh University</h2>
             <p className="text-muted-foreground mt-2 text-sm md:text-base">Mamupur, Punjab • Interactive map</p>
           </div>
         </header>
-        <article className="rounded-xl border bg-card overflow-hidden shadow-soft">
+        <article data-reveal className="rounded-xl border bg-card overflow-hidden shadow-soft">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3428.2062520807226!2d76.57060829678954!3d30.768790200000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ffb140bd63e07%3A0x68591e334d17a988!2sChandigarh%20University!5e0!3m2!1sen!2sin!4v1754969616756!5m2!1sen!2sin"
             title="Map of Chandigarh University, the venue"
@@ -250,27 +293,27 @@ const Index = () => {
       </section>
 
       {/* Register CTA */}
-      <section id="register" className="container pb-20 animate-fade-in">
-        <div className="border-2 bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-black bg-white border-black border-t-4 border-r-4 font-medium">
+      <section id="register" className="container pb-20">
+        <div data-reveal className="border-2 bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-black bg-white border-black border-t-4 border-r-4 font-medium">
           <div className="mb-4 md:mb-0">
             <h2 className="font-display text-xl md:text-3xl">Ready to join Cloud Community Days?</h2>
             <p className="text-muted-foreground mt-2 text-sm md:text-base">Limited seats. Save your spot today.</p>
           </div>
           <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
-            <Button asChild size="lg" className="flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white w-full md:w-auto"><a href={REGISTER_URL}>Register Now</a></Button>
-            <Button asChild size="lg" className="flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white w-full md:w-auto"><Link to="/agenda">View Agenda</Link></Button>
+            <Button asChild size="lg" className="lift flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white w-full md:w-auto"><a href={REGISTER_URL}>Register Now</a></Button>
+            <Button asChild size="lg" className="lift flex text-black items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white w-full md:w-auto"><Link to="/agenda">View Agenda</Link></Button>
           </div>
         </div>
       </section>
 
       {/* Gallery */}
-      <section id="gallery" className="container pb-20 animate-fade-in">
-        <header className="mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+      <section id="gallery" className="container pb-20">
+        <header data-reveal className="mb-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-xl md:text-3xl">Gallery</h2>
             <p className="text-muted-foreground mt-2 text-sm md:text-base">Moments from past community events.</p>
           </div>
-          <Link to="/gallery" className="w-full md:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10 mt-4 md:mt-0" >See more photos</Link>
+          <Link to="/gallery" className="lift w-full md:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10 mt-4 md:mt-0" >See more photos</Link>
         </header>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
@@ -278,12 +321,12 @@ const Index = () => {
             "/gallery/io-extended-1.png",
             "/gallery/cloud-community-day-1.jpg",
           ].map((src, i) => (
-            <div key={i} className="rounded-xl overflow-hidden border bg-card hover-scale">
+            <div key={i} data-reveal style={{ "--reveal-delay": `${i * 120}ms` } as React.CSSProperties} className="group rounded-xl overflow-hidden border bg-card">
               <img
                 src={src}
                 alt={`Cloud Community Days gallery image ${i + 1}`}
                 loading="lazy"
-                className="w-full object-cover animate-enter"
+                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           ))}
@@ -291,8 +334,8 @@ const Index = () => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="container pb-24 animate-fade-in">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <section id="contact" className="container pb-24">
+        <div data-reveal className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left: Contact Info */}
           <div>
             <header className="mb-6">
@@ -304,7 +347,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="w-full sm:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
+                className="lift w-full sm:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
               >
                 Get in touch
               </Link>
@@ -312,7 +355,7 @@ const Index = () => {
                 href="https://drive.google.com/file/d/176ocWVYD28PlZTgIQBj5y54dJ7HsKVex/view?usp=sharing"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full sm:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium transition hover:bg-black hover:text-white story-link bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
+                className="w-full sm:w-32 h-10 flex items-center justify-center bg-white border-2 border-black border-t-4 border-r-4 rounded-none font-medium hover:bg-black hover:text-white bg-gradient-to-r from-[hsl(var(--brand-blue))]/10 via-[hsl(var(--brand-green))]/10 to-[hsl(var(--brand-yellow))]/10"
               >
                 Sponsorship
               </a>

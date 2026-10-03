@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Sticker } from "@/components/Sticker";
 import { Seo } from "@/components/Seo";
 import { Card } from "@/components/ui/card";
@@ -75,9 +76,11 @@ export default function Team() {
         <h1 className="font-display text-4xl mb-8 text-center">Our Team</h1>
         <div className="flex justify-center mb-12">
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
-            {teamMembers.map((member) => (
+            {teamMembers.map((member, i) => (
               <Card
                 key={member.name}
+                data-reveal
+                style={{ "--reveal-delay": `${i * 120}ms` } as CSSProperties}
                 className="flex flex-col items-center p-6 text-center w-full max-w-xs mx-auto"
               >
                 <Avatar className="w-32 h-32 mb-4">
@@ -104,9 +107,11 @@ export default function Team() {
         <h2 className="font-display text-2xl mb-6 text-center">Core Team</h2>
         <div className="flex justify-center mb-12">
           <div className="grid gap-8 grid-cols-2 lg:grid-cols-5">
-            {volunteers.map((vol) => (
+            {volunteers.map((vol, i) => (
               <Card
                 key={vol.name}
+                data-reveal
+                style={{ "--reveal-delay": `${i * 90}ms` } as CSSProperties}
                 className="flex flex-col items-center p-6 text-center w-full max-w-xs mx-auto"
               >
                 <Avatar className="w-28 h-28 mb-4">
